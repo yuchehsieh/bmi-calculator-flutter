@@ -84,6 +84,28 @@ class _InputPageState extends State<InputPage> {
                       Text('cm', style: kLabelTextStyle),
                     ],
                   ),
+
+                  ///
+                  /// 兩種 SliderTheme 做法
+                  /// 第一種：全部自己尻【第一個】
+                  /// 第二種（老師教的）：用預設定義然後 copyWith 改你要改的地方【第二個】
+                  /// 第三種：定義在 main.dart 設成全局預設 style
+                  ///        然後 Slider 會直結套用，或者用 copyWith 再修改【第三個】
+//                  SliderTheme(
+//                    data: SliderThemeData(
+//                      activeTickMarkColor: Colors.lightBlueAccent,
+//                    ),
+//                    child: Slider(
+//                      value: height.toDouble(),
+//                      min: 120.0,
+//                      max: 220.0,
+//                      onChanged: (double newValue) {
+//                        setState(() {
+//                          height = newValue.round();
+//                        });
+//                      },
+//                    ),
+//                  ),
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
                       activeTrackColor: Colors.white,
@@ -108,6 +130,27 @@ class _InputPageState extends State<InputPage> {
                       },
                     ),
                   ),
+//                  SliderTheme(
+//                    data: SliderTheme.of(context).copyWith(
+//                      activeTickMarkColor: Colors.redAccent,
+//                      thumbShape: RoundSliderThumbShape(
+//                        enabledThumbRadius: 20.0,
+//                      ),
+//                      overlayShape: RoundSliderOverlayShape(
+//                        overlayRadius: 30.0,
+//                      ),
+//                    ),
+//                    child: Slider(
+//                      value: height.toDouble(),
+//                      min: 120.0,
+//                      max: 220.0,
+//                      onChanged: (double newValue) {
+//                        setState(() {
+//                          height = newValue.round();
+//                        });
+//                      },
+//                    ),
+//                  ),
                 ],
               ),
             ),
